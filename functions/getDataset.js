@@ -1,29 +1,30 @@
-const fetch = require('node-fetch')
+// const fetch = require('node-fetch')
+import fetch from 'node-fetch'
 exports.handler = async function (event) {
 
-    // const limit=JSON.parse(event.body)
-    const url = 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql';
+    const url = process.env.DIGITRANSIT_GRAPHQL_API;
     const query = `{
-        stop(id: "HSL:1020453") {
-         name
-             stoptimesWithoutPatterns {
-              serviceDay
-              scheduledArrival
-              headsign
-              trip {
-                route {
-                  shortName
-                  agency {
-                    name
-                  }
+      stops(name: "rautatieasema" ) {
+        gtfsId
+        name
+         stoptimesWithoutPatterns {
+            serviceDay
+            scheduledArrival
+            headsign
+            trip {
+              route {
+                shortName
+                agency {
+                  name
                 }
-                wheelchairAccessible
-                bikesAllowed
               }
-              
-            } 
-        }  
-      }`;
+              wheelchairAccessible
+              bikesAllowed
+            }
+            
+          } 
+      }  
+    }`;
 
 const response = await fetch(url, {
     method: 'POST',
