@@ -1,6 +1,6 @@
- //const fetch = require('node-fetch')
+//  const fetch = require('node-fetch')
 import fetch from 'node-fetch'
-exports.handler = async function (event) {
+exports.handler =  async function (event) {
 
     const url = process.env.DIGITRANSIT_GRAPHQL_API;
     const query = `{
