@@ -4,31 +4,31 @@ import StoptimesValue from './components/StoptimesValue.js'
 
 const App =() => {
 
-  const [dataset, setDataset]= useState('')
-    const fetchData = async () => {
-    const response = await fetch("/.netlify/functions/getDataset")
-    const responseBody = await response.json()
-    setDataset(responseBody.data.stops)
+ // const [dataset, setDataset]= useState('')
+ // const fetchData = async () => {
+ //   const response = await fetch("/.netlify/functions/getDataset")
+ //   const responseBody = await response.json()
+ //  setDataset(responseBody.data.stops)
 
-    }
-      useEffect (() => {
-        fetchData()
-      }, [])
+ // }
+  //  useEffect (() => {
+   //   fetchData()
+   //  }, [])
 
-    console.log(dataset)
+    // console.log(dataset)
     
     
-  for (let i=0; i < dataset.length; i++) {
-      console.log(dataset[i].gtfsId)
+   //for (let i=0; i < dataset.length; i++) {
+   //   console.log(dataset[i].gtfsId)
       
-    const stoptimesArray=dataset[i].stoptimesWithoutPatterns
-    for (let n=0; n < stoptimesArray.length; n++) {
+   // const stoptimesArray=dataset[i].stoptimesWithoutPatterns
+   //for (let n=0; n < stoptimesArray.length; n++) {
 
-    console.log(stoptimesArray[n].headsign)
-    console.log(stoptimesArray[n].trip.route.shortName)
+   //console.log(stoptimesArray[n].headsign)
+   //console.log(stoptimesArray[n].trip.route.shortName)
 
-        }
-    }
+    //  }
+    // }
     
     
     // for (const [key, value] of Object.entries(dataset)) {
