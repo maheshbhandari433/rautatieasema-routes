@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Section from './components/Section.js'
-import StopTimes from './components/StopTimes.js'
 import StoptimesValue from './components/StoptimesValue.js'
 
 const App =() => {
