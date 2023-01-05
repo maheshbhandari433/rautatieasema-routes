@@ -1,6 +1,21 @@
+
+// export const handler = async () => {
+	
+// 	return {
+// 		statusCode: 200,
+// 		body: JSON.stringify({
+// 			message: 'This is what will be returned!'
+// 		})
+// 	}
+// }
+
+
+
+
 //  const fetch = require('node-fetch')
 import fetch from 'node-fetch'
-exports.handler =  async function (event) {
+
+export const handler = async (event) => {
 
     const url = process.env.DIGITRANSIT_GRAPHQL_API;
     const query = `{
@@ -43,7 +58,7 @@ try {
     console.log(e)
     return {
         statusCode: 500,
-        body: JSON.stingify(e)
+        body: JSON.stringify(e)
     }
     }
 }
